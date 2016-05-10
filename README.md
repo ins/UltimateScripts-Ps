@@ -2,7 +2,7 @@
 by Zoltan Szalay
 https://twitter.com/insgraphizm
 
-**Image placer/replacer, Resize to fill, and Guidelines scripts for Windows Photoshop users**
+**Image placer/replacer, Resize to fill and Guidelines scripts for Windows Photoshop users**
 
 ## Installation
 1. Download zip and extract to photoshop scripts folder:  
