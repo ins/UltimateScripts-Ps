@@ -1,9 +1,9 @@
 /*
 <javascriptresource>
-<name>  Rule of Thirds</name>
+<name>  Edges</name>
 <enableinfo>true</enableinfo>
 <menu>filter</menu> 
-<category>UltimateScripts Guides 3</category> 
+<category>UltimateScripts Guides 1</category> 
 </javascriptresource>
 */
 
@@ -21,7 +21,7 @@ Create guidelines based on rule of thirds based on canvas or selection
 
 
 
-app.activeDocument.suspendHistory("Guides at Rule of Thirds", "main()");
+app.activeDocument.suspendHistory("Guides at Edges", "main()");
 
 function main() {
 
@@ -55,14 +55,9 @@ function main() {
 
 		ad.guides.add(Direction.VERTICAL, new UnitValue(left,"px"));
 		ad.guides.add(Direction.VERTICAL, new UnitValue(left + width,"px"));
-		ad.guides.add(Direction.VERTICAL, new UnitValue(left + Math.round(width/3),"px"));
-		ad.guides.add(Direction.VERTICAL, new UnitValue(left + Math.round(width/3)*2,"px"));
 
 		ad.guides.add(Direction.HORIZONTAL, new UnitValue(top,"px"));
 		ad.guides.add(Direction.HORIZONTAL, new UnitValue(top + height,"px"));
-		ad.guides.add(Direction.HORIZONTAL, new UnitValue(top + Math.round(height/3),"px"));
-		ad.guides.add(Direction.HORIZONTAL, new UnitValue(top + Math.round(height/3)*2,"px"));
-
 
 		preferences.rulerUnits = ou;
 

@@ -1,6 +1,6 @@
 /*
 <javascriptresource>
-<name>Resize to Fill Canvas</name>
+<name>  Resize to Fill Canvas</name>
 <enableinfo>true</enableinfo>
 <menu>filter</menu> 
 <category>UltimateScripts Resize 2</category> 
@@ -21,11 +21,17 @@ Resize and position selected layer to fill the canvas
 
 
 
+#target photoshop
+
 #include "common.jsx";
 
-app.activeDocument.suspendHistory("Resize to Fill Canvas", "main(imgDir)");
+if ( app.documents.length == 0 ) {
+	alert("There are no documents open.");
+} else {
+	app.activeDocument.suspendHistory("Resize to Fill Canvas", "main()");
+}
 
-function main(inputFolder) {
+function main() {
 
 	var layers = getSelectedLayers();
 

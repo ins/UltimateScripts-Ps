@@ -1,9 +1,9 @@
 /*
 <javascriptresource>
-<name>  Clip Images to Selected Layers (Random)</name>
+<name>  Clip Images to Selected Layers</name>
 <enableinfo>true</enableinfo>
-<menu>filter</menu> 
-<category>UltimateScripts Clip 3</category> 
+<menu>filter</menu>
+<category>UltimateScripts Clip 2</category>
 </javascriptresource>
 */
 
@@ -16,7 +16,7 @@ by Zoltan Szalay
 https://twitter.com/insgraphizm
 
 Load images from the selected folder.
-Place in RANDOM order above selected layers.
+Place in order above selected layers.
 Selected layers will be clipping masks.
 Images placed as smart objects.
 Centered and resized to fill the clipping mask.
@@ -34,7 +34,7 @@ If the selected layer is a previously placed image - a (clip) - then that will b
 if ( app.documents.length == 0 ) {
 	alert("There are no documents open.");
 } else {
-	app.activeDocument.suspendHistory("Clip Images to Selected Layers (Random)", "checkPrefs()");
+	app.activeDocument.suspendHistory("Clip Images to Selected Layers", "checkPrefs()");
 }
 
 function checkPrefs() {
@@ -49,7 +49,7 @@ function checkPrefs() {
 function main() {
 
 	var layers = getSelectedLayers();
-	var files = shuffle(getFilesFromFolder(imgFolder));
+	var files = getFilesFromFolder(imgFolder);
 
 	// if more layers are selected than how many images we have in the folder
 	while (files.length < layers.length) files = files.concat(files);

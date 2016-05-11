@@ -18,16 +18,41 @@ https://twitter.com/insgraphizm
 Half of the functions in this common.js are from 
 https://github.com/iansilber/ig-design-tools
 by Ian Silber
-https://twitter.com/iansilber
+
+The preferences.txt part is taken from
+http://uebelephoto.com/download%20center/watermark.zip
+by Chuck Uebele
 
 */
 
 
-//#include "folder.jsx";
-#include "~/Desktop/UltimateScripts Settings.jsx";
+
+/* Storing and retrieving preferences */
+
+var pref = new File("~/Desktop/Ultimate Folder.txt");
+var imgFolder;
+var pfx = " (clip)";
+
+function selectFolder() {
+	imgFolder = Folder.selectDialog("Select source folder");
+	writePrefs(imgFolder);
+}
+
+function writePrefs(prefString) {
+	pref.open('w');
+	pref.write(prefString);
+	pref.close();
+}
+
+function readPrefs() {
+	pref.open('r');
+	var varUI = pref.read();
+	imgFolder = varUI;
+}
 
 
-/* FUNCTIONS from ig-design-tools */
+
+/* Common stuff from ig-design-tools */
 function moveLayerTo(fLayer, fX, fY) {
 	var Position = fLayer.bounds;
 	Position[0] = fX - Position[0];
