@@ -1,9 +1,9 @@
 /*
 <javascriptresource>
-<name>  Replace All Clips (Random)</name>
+<name>  Replace All Clips</name>
 <enableinfo>true</enableinfo>
 <menu>filter</menu> 
-<category>UltimateScripts Clip 5</category> 
+<category>UltimateScripts Clip 4</category> 
 </javascriptresource>
 */
 
@@ -17,7 +17,7 @@ https://twitter.com/insgraphizm
 
 Find all layers that ends with " (clip)"
 Load images from the selected folder.
-Place images in RANDOM order above found layers.
+Place images in order above found layers.
 Found layers will be clipping masks.
 Images placed as smart objects.
 Centered and resized to fill the clipping mask.
@@ -33,7 +33,7 @@ If the selected layer is a previously placed image - a (clip) - then that will b
 if ( app.documents.length == 0 ) {
 	alert("There are no documents open.");
 } else {
-	app.activeDocument.suspendHistory("Replace All Clips (Random)", "checkPrefs()");
+	app.activeDocument.suspendHistory("Replace All Clips", "checkPrefs()");
 }
 
 function checkPrefs() {
@@ -47,7 +47,7 @@ function checkPrefs() {
 
 function main() {
 	var layers = findLayersByEnd(pfx);
-	var files = shuffle(getFilesFromFolder(imgFolder));
+	var files = getFilesFromFolder(imgFolder);
 
 	// if layers selected is less the images we have in the folder, we need more images in the array
 	while (files.length < layers.length) files = files.concat(files);
