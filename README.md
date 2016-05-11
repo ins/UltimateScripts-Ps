@@ -4,7 +4,7 @@ by Zoltan Szalay [twitter @insgraphizm](https://twitter.com/insgraphizm)
 ## Small collection of useful scripts for everyday Photoshop work.
 
 ### Clip
-**When designing a website or app, a gallery or newsfeed with placeholder layers, batch import clip and scale images**
+**When designing a website or app, a gallery or newsfeed with placeholder layers, batch import, clip and scale images**
 - Place images from a folder to selected placerholder layers
 - Replace *all* or *selected* clips with new images
 - Folder selection is stored in a txt file on the Desktop
