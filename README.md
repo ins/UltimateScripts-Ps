@@ -22,9 +22,13 @@ by Zoltan Szalay [twitter @insgraphizm](https://twitter.com/insgraphizm)
 ---
 
 ## Installation
-Download zip and extract *UltimateScripts* folder to Photoshop's Scripts folder:  
+**Download** zip and **move** the *UltimateScripts* folder to Photoshop's Scripts folder:  
 Windows 10 - C:\Program Files\Adobe\Adobe Photoshop CC 2015\Presets\Scripts\  
 Mac - Applications/Adobe Photoshop CC 2015/Presets/Scripts
+
+**Restart** Photoshop and the scripts will show up at the bottom of the **Filter menu**. I used this, because it's quicker to access than *File/Scripts menu*.
+
+(Alternatively you can run the scripts by double-clicking from any folder, but then they will not show up in the Filter menu.)
 
 ## Uninstallation
 Delete the *UltimateScripts* folder from the *Presets/Scripts* folder.
