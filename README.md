@@ -4,18 +4,18 @@ by Zoltan Szalay [twitter @insgraphizm](https://twitter.com/insgraphizm)
 ## Small collection of useful scripts for everyday Photoshop work.
 
 ### Clip
-**When designing a website or app, a gallery or a newsfeed with placeholder layers, import images with the Clip scripts**
+**When designing a website or app, a gallery or newsfeed with placeholder layers, batch import clip and scale images**
 - Place images from a folder to selected placerholder layers
 - Replace *all* or *selected* clips with new images
 - Folder selection is stored in a txt file on the Desktop
 
 ### Resize
-**If the size of a clipping layer is changed, update the scale and position of the image with the Resize scripts**
+**If the size of a clipping layer is changed, update the scale and position of the image**
 - Center and resize images to fill
 - Relative to *layer below* or *canvas*
 
 ### Guides
-**Quick add Guidelines to multiple layers or a selection, for quick positioning**
+**Quick add Guidelines to multiple layers or a selection for quick positioning**
 - Use *selection* or *selected layers*
 - Edge, Center, Rule of Thirds
 
