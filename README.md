@@ -7,6 +7,7 @@ https://twitter.com/insgraphizm
 ## Installation
 1. Download zip and extract to photoshop scripts folder:  
 Windows 10 - C:\Program Files\Adobe\Adobe Photoshop CC 2015\Presets\Scripts\
+[open folder](file://C:\Program Files\Adobe\Adobe Photoshop CC 2015\Presets\Scripts)
 
 2. Open Photoshop and find the scripts on the bottom of *Filter* menu.  
 (I use this for faster access, instead of the *File/Scripts* folder)
