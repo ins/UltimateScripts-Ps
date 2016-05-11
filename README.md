@@ -38,5 +38,4 @@ You can delete any script that you don't need - except *common.js* - things will
 
 ---
 
-## Acknowledgement
-The image placing part is inspired by the Photos panel of [InVision LABS Craft](https://www.invisionapp.com/craft), but the starting point was the [Instagram Design Tools](https://github.com/iansilber/ig-design-tools).
+The image placing part was inspired by the Photos panel of [InVision LABS Craft](https://www.invisionapp.com/craft), but the starting point was the [Instagram Design Tools](https://github.com/iansilber/ig-design-tools).
