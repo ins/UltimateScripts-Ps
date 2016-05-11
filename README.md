@@ -15,8 +15,8 @@ by Zoltan Szalay [twitter @insgraphizm](https://twitter.com/insgraphizm)
 - Relative to *layer below* or *canvas*
 
 ### Guides
-**Quick add Guidelines, for quick positioning**
-- Use *canvas* or *selection*
+**Quick add Guidelines to multiple layers or a selection, for quick positioning**
+- Use *selection* or *selected layers*
 - Edge, Center, Rule of Thirds
 
 ---
@@ -34,7 +34,7 @@ Mac - Applications/Adobe Photoshop CC 2015/Presets/Scripts
 Delete the *UltimateScripts* folder from the *Presets/Scripts* folder.
 
 ### Customize
-You can delete any script that you don't want/need - except *common.js* - things will not break.
+You can delete any script that you don't need - except *common.js* - things will not break.
 
 ---
 

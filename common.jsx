@@ -305,3 +305,16 @@ function findLayersByEnd(postFix) {
 	}
 	return layers;
 }
+
+
+function addVGuide(coord) {
+	for (var i = 0; i < activeDocument.guides.length; ++i)
+		if (activeDocument.guides[i].direction == Direction.VERTICAL && activeDocument.guides[i].coordinate == coord) return false;
+	app.activeDocument.guides.add(Direction.VERTICAL, new UnitValue(coord,"px"));
+}
+
+function addHGuide(coord) {
+	for (var i = 0; i < activeDocument.guides.length; ++i)
+		if (activeDocument.guides[i].direction == Direction.HORIZONTAL && activeDocument.guides[i].coordinate == coord) return false;
+	app.activeDocument.guides.add(Direction.HORIZONTAL, new UnitValue(coord,"px"));
+}
