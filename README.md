@@ -2,12 +2,11 @@
 by Zoltan Szalay
 https://twitter.com/insgraphizm
 
-**Image placer/replacer, Resize to fill and Guidelines scripts for Windows Photoshop users**
+**Image placer/replacer, Resize to fill and Guidelines scripts for Photoshop users**
 
 ## Installation
 1. Download zip and extract to photoshop scripts folder:  
 Windows 10 - C:\Program Files\Adobe\Adobe Photoshop CC 2015\Presets\Scripts\
-[open folder](file://C:\Program Files\Adobe\Adobe Photoshop CC 2015\Presets\Scripts)
 
 2. Open Photoshop and find the scripts on the bottom of *Filter* menu.  
 (I use this for faster access, instead of the *File/Scripts* folder)
