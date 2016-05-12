@@ -4,17 +4,20 @@ by Zoltan Szalay [twitter @insgraphizm](https://twitter.com/insgraphizm)
 ## Small collection of useful scripts for everyday Photoshop work.
 
 ### Clip
+![Play video](https://raw.githubusercontent.com/ins/UltimateScripts-Ps/gh-pages/i/clip.jpg)
 **When designing a website or app, a gallery or newsfeed with placeholder layers, batch import, clip and scale images**
 - Place images from a folder to selected placerholder layers
 - Replace *all* or *selected* clips with new images
 - Folder selection is stored in a txt file on the Desktop
 
 ### Resize
+![Play video](https://raw.githubusercontent.com/ins/UltimateScripts-Ps/gh-pages/i/resize.jpg)
 **If the size of a clipping layer is changed, update the scale and position of the image**
 - Center and resize images to fill
 - Relative to *layer below* or *canvas*
 
 ### Guides
+![Play video](https://raw.githubusercontent.com/ins/UltimateScripts-Ps/gh-pages/i/guides.jpg)
 **Quick add Guidelines to multiple layers or a selection for quick positioning**
 - Use *selection* or *selected layers*
 - Edge, Center, Rule of Thirds
@@ -22,6 +25,7 @@ by Zoltan Szalay [twitter @insgraphizm](https://twitter.com/insgraphizm)
 ---
 
 ## Installation
+![Play video](https://raw.githubusercontent.com/ins/UltimateScripts-Ps/gh-pages/i/install.jpg)
 **[Download ZIP](https://github.com/ins/UltimateScripts-Ps/archive/master.zip)** and **move** *UltimateScripts* folder to Photoshop's Scripts folder:  
 Windows 10 - C:\Program Files\Adobe\Adobe Photoshop CC 2015\Presets\Scripts\  
 Mac - Applications/Adobe Photoshop CC 2015/Presets/Scripts
