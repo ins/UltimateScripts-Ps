@@ -22,7 +22,7 @@ by Zoltan Szalay [twitter @insgraphizm](https://twitter.com/insgraphizm)
 ---
 
 ## Installation
-**Download ZIP** and **move** *UltimateScripts* folder to Photoshop's Scripts folder:  
+**[Download ZIP](https://github.com/ins/UltimateScripts-Ps/archive/master.zip)** and **move** *UltimateScripts* folder to Photoshop's Scripts folder:  
 Windows 10 - C:\Program Files\Adobe\Adobe Photoshop CC 2015\Presets\Scripts\  
 Mac - Applications/Adobe Photoshop CC 2015/Presets/Scripts
 
