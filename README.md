@@ -27,8 +27,8 @@ by Zoltan Szalay [twitter @insgraphizm](https://twitter.com/insgraphizm)
 ## Installation
 [![Play video](https://raw.githubusercontent.com/ins/UltimateScripts-Ps/gh-pages/i/install.png)](https://vimeo.com/166353587)  
 **[Download ZIP](https://github.com/ins/UltimateScripts-Ps/archive/master.zip)** and **move** *UltimateScripts* folder to Photoshop's Scripts folder:  
-Windows 10 - C:\Program Files\Adobe\Adobe Photoshop CC 2015\Presets\Scripts\  
-Mac - Applications/Adobe Photoshop CC 2015/Presets/Scripts
+Windows 10 - C:\Program Files\Adobe\Adobe Photoshop CC 2017\Presets\Scripts\  
+Mac - Applications/Adobe Photoshop CC 2017/Presets/Scripts
 
 **Restart Photoshop** and the scripts will show up at the bottom of the **Filter menu**.
 
