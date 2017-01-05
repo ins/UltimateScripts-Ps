@@ -26,7 +26,8 @@ by Zoltan Szalay [twitter @insgraphizm](https://twitter.com/insgraphizm)
   2 - Edges and Centerlines  
   3 - Rule of Thirds  
   4 - 4x4 grid  
-  5 - you get it...
+  5 - 5x5 grid
+  and so on...
 
 ---
 
