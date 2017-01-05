@@ -20,7 +20,13 @@ by Zoltan Szalay [twitter @insgraphizm](https://twitter.com/insgraphizm)
 [![Play video](https://raw.githubusercontent.com/ins/UltimateScripts-Ps/gh-pages/i/guides.png)](https://vimeo.com/166353608)  
 **Quick add Guidelines to multiple layers or a selection for quick positioning**
 - Use *selection* or *selected layers*
-- Edge, Center, Rule of Thirds
+- ~~Edge, Center, Rule of Thirds~~
+- **UPDATE**: 1 script does all 3 previous use case, plus more. You can enter one number, how many divisions you need horizontally _and_ vertically. eg:  
+  0, 1 or esc - Edges only  
+  2 - Edges and Centerlines  
+  3 - Rule of Thirds  
+  4 - 4x4 grid  
+  5 - you get it...
 
 ---
 
