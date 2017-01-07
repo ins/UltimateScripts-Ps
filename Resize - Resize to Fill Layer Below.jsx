@@ -25,23 +25,22 @@ Resize and position selected layer to fill the layer below
 
 #include "common.jsx";
 
-if ( app.documents.length == 0 ) {
-	alert("There are no documents open.");
-} else {
+if (app.documents.length)
 	app.activeDocument.suspendHistory("Resize to Fill Layer Below", "main()");
-}
-
 
 function main() {
 
 	var layers = getSelectedLayers();
 
 	for (var i = 0; i < layers.length; ++i) {
-	  	var targetLayer = findlayerBelow(layers[i]);
-	  	if (targetLayer == false) {
- 			fillCanvas(layers[i]);
-	  	} else {
-			resizeAndMoveLayer(layers[i], targetLayer, true);
+	  	try {
+	  		var targetLayer = findlayerBelow(layers[i]);	
+		  	if (targetLayer == false) {
+	 			fillCanvas(layers[i]);
+		  	} else {
+				resizeAndMoveLayer(layers[i], targetLayer, true);
+			}
+	  	} catch (e) {
 		}
 	}
 }

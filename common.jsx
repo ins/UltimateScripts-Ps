@@ -15,11 +15,11 @@ UltimateScripts
 by Zoltan Szalay
 https://twitter.com/insgraphizm
 
-Half of the functions in this common.js are from 
+Some of the functions are taken from 
 https://github.com/iansilber/ig-design-tools
 by Ian Silber
 
-The preferences.txt part is taken from
+and from
 http://uebelephoto.com/download%20center/watermark.zip
 by Chuck Uebele
 
@@ -52,7 +52,7 @@ function readPrefs() {
 
 
 
-/* Common stuff from ig-design-tools */
+
 function moveLayerTo(fLayer, fX, fY) {
 	var Position = fLayer.bounds;
 	Position[0] = fX - Position[0];
@@ -91,6 +91,7 @@ function createSmartObject(layer) {
 	}
 }
 
+
 function getSelectedLayersIdx() {
 	var selectedLayers = new Array;
 	var ref = new ActionReference();
@@ -102,7 +103,7 @@ function getSelectedLayersIdx() {
 		var selectedLayers = new Array();
 		for (var i = 0; i < c; i++) {
 			try {
-				activeDocument.backgroundLayer;
+				app.activeDocument.backgroundLayer;
 				selectedLayers.push(desc.getReference(i).getIndex());
 			} catch (e) {
 				selectedLayers.push(desc.getReference(i).getIndex() + 1);
@@ -113,7 +114,7 @@ function getSelectedLayersIdx() {
 		ref.putProperty(charIDToTypeID("Prpr"), charIDToTypeID("ItmI"));
 		ref.putEnumerated(charIDToTypeID("Lyr "), charIDToTypeID("Ordn"), charIDToTypeID("Trgt"));
 		try {
-			activeDocument.backgroundLayer;
+			app.activeDocument.backgroundLayer;
 			selectedLayers.push(executeActionGet(ref).getInteger(charIDToTypeID("ItmI")) - 1);
 		} catch (e) {
 			selectedLayers.push(executeActionGet(ref).getInteger(charIDToTypeID("ItmI")));
@@ -191,12 +192,83 @@ function placeScaleRotateFile(file, xOffset, yOffset, theXScale, theYScale, theA
 	return app.activeDocument.activeLayer;
 };
 
-/* FUNCTIONS from ig-design-tools END */
 
 
+function layerColour(colour) {
+	switch (colour.toLocaleLowerCase()) {
+		case 'red': colour = 'Rd  '; break;
+		case 'orange' : colour = 'Orng'; break;
+		case 'yellow' : colour = 'Ylw '; break;
+		case 'yellow' : colour = 'Ylw '; break;
+		case 'green' : colour = 'Grn '; break;
+		case 'blue' : colour = 'Bl  '; break;
+		case 'violet' : colour = 'Vlt '; break;
+		case 'gray' : colour = 'Gry '; break;
+		case 'none' : colour = 'None'; break;
+		default : colour = 'None'; break;
+	}
+	var desc = new ActionDescriptor();
+	var ref = new ActionReference();
+	ref.putEnumerated(charIDToTypeID('Lyr '), charIDToTypeID('Ordn'), charIDToTypeID('Trgt'));
+	desc.putReference(charIDToTypeID('null'), ref);
+	var desc2 = new ActionDescriptor();
+	desc2.putEnumerated(charIDToTypeID('Clr '), charIDToTypeID('Clr '), charIDToTypeID(colour));
+	desc.putObject(charIDToTypeID('T   '), charIDToTypeID('Lyr '), desc2);
+	executeAction(charIDToTypeID('setd'), desc, DialogModes.NO);
+}
 
+function getLayerVisibilityByIndex(idx) {
+	if (idx) {
+		var ref = new ActionReference();
+		ref.putProperty(charIDToTypeID("Prpr") , charIDToTypeID("Vsbl"));
+		ref.putIndex(charIDToTypeID("Lyr "), idx);
+		return executeActionGet(ref).getBoolean(charIDToTypeID("Vsbl"));
+	}
+}
 
+function selectLayerByIndex(index, add) {
+	add = (add == undefined) ? add = false : add;
+	var ref = new ActionReference();
+	ref.putIndex(charIDToTypeID("Lyr "), index);
+	var desc = new ActionDescriptor();
+	desc.putReference(charIDToTypeID("null"), ref);
 
+	if (add) desc.putEnumerated(stringIDToTypeID("selectionModifier"), stringIDToTypeID("selectionModifierType"), stringIDToTypeID("addToSelection"));
+
+	desc.putBoolean(charIDToTypeID("MkVs"), false);
+
+	try {
+		executeAction(charIDToTypeID("slct"), desc, DialogModes.NO);
+	} catch (e) {}
+};
+
+function selectAllLayers(layer) {
+	if (layer == undefined) layer = 0;
+
+	topLayer = true;
+	if (!activeDocument.layers[0].visible) topLayer = false;
+
+	activeDocument.activeLayer = activeDocument.layers[activeDocument.layers.length-1];
+	if (activeDocument.activeLayer.isBackgroundLayer)
+		if (!activeDocument.layers[activeDocument.layers.length-2].visible) {
+			activeDocument.activeLayer = activeDocument.layers[activeDocument.layers.length-2];
+			activeDocument.activeLayer.visible = false;
+		} else {
+			activeDocument.activeLayer = activeDocument.layers[activeDocument.layers.length-2];
+		}
+
+	var BL = activeDocument.activeLayer.name;
+	activeDocument.activeLayer = activeDocument.layers[layer];
+	var desc5 = new ActionDescriptor();
+	var ref3 = new ActionReference();
+	ref3.putName(charIDToTypeID('Lyr '), BL);
+	desc5.putReference(charIDToTypeID('null'), ref3);
+	desc5.putEnumerated(stringIDToTypeID('selectionModifier'), stringIDToTypeID('selectionModifierType'), stringIDToTypeID('addToSelectionContinuous'));
+	desc5.putBoolean(charIDToTypeID('MkVs'), false);
+	executeAction(charIDToTypeID('slct'), desc5, DialogModes.NO);
+	if (!topLayer) activeDocument.layers[0].visible = false;
+};
+/*-----*/
 
 /*
 UPDATED from ig-design-tools
@@ -265,6 +337,7 @@ function placeFile(file, activeLayer, fill) {
 	return newLayer;
 }
 
+/*
 function findlayerBelow(layerName) {
 	if (app.activeDocument.layers[app.activeDocument.layers.length-1] == layerName) {
 		return false;
@@ -272,6 +345,17 @@ function findlayerBelow(layerName) {
 		var i = 0;
 		while (app.activeDocument.layers[i] != layerName) i++;
 		return app.activeDocument.layers[i+1];
+	}
+}
+*/
+
+function findlayerBelow(layerName) {
+	if (layerName.parent[layerName.parent.layers.length-1] == layerName) {
+		return false;
+	} else {
+		var i = 0;
+		while (layerName.parent.layers[i] != layerName) i++;
+		return layerName.parent.layers[i+1];
 	}
 }
 
