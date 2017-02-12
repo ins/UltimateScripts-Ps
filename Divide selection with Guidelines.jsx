@@ -30,9 +30,14 @@ function main() {
 	var ou = preferences.rulerUnits;
 	preferences.rulerUnits = Units.PIXELS;
 
-	var dvsn = prompt("Enter divisions: (eg: 2 - edges and centerlines, 3 - rule of thirds, 4 - 4x4 grid. Esc - edges only)", "", "Division");
+	var dvsn = prompt("Separate horizontal/vertical divisions with /.\nFor even horizontal/vertical divisions use one number.\nTo clear guides before, start with *.\n(try: Esc or 1, 2, 3, *3, 4/3, *3/10", "", "Enter divisions");
 
-	if (dvsn == null || (dvsn > 1 && dvsn < 10000) ) {
+	if (dvsn != null && dvsn.charAt(0) == "*") {
+		clearCanvasGuides();
+		dvsn = dvsn.substr(1);
+	}
+
+	if (dvsn == null || (dvsn > 0 && dvsn < 10000) || dvsn.indexOf("/") > 0) {
 	
 		var left;
 		var top;
@@ -70,14 +75,36 @@ function main() {
 	preferences.rulerUnits = ou;
 }
 
-function addGuides(left, top, width, height, divisions) {
+function addGuides(left, top, width, height, div) {
+	
 	addVGuide(left);
 	addVGuide(left + width);
 	addHGuide(top);
 	addHGuide(top + height);
 
-	for (i = 1; i < divisions; i++) {
-		addVGuide(left + Math.round(width/divisions*i));
-		addHGuide(top + Math.round(height/divisions*i));
+	if (div != null) {
+
+		var divisionsX = div;
+		var divisionsY = div;
+
+		if (div.indexOf("/") > 0) {
+			divisionsX = div.split("/")[0];
+			divisionsY = div.split("/")[1];
+		}
+
+
+		for (i = 1; i < divisionsX; i++) {
+			addVGuide(left + Math.round(width/divisionsX*i));
+		}
+
+		for (i = 1; i < divisionsY; i++) {
+			addHGuide(top + Math.round(height/divisionsY*i));
+		}
 	}
+}
+
+
+function clearCanvasGuides() {
+	var idclearCanvasGuides = stringIDToTypeID( "clearCanvasGuides" );
+	executeAction( idclearCanvasGuides, undefined, DialogModes.NO );
 }
