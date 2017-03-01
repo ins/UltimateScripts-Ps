@@ -281,40 +281,31 @@ function resizeAndMoveLayer(newLayer, existingLayer, fill) {
 	var tempHeight = newLayer.bounds[3] - newLayer.bounds[1];
 	var width = existingLayer.bounds[2] - existingLayer.bounds[0] + 2;
 	var height = existingLayer.bounds[3] - existingLayer.bounds[1] + 2;
-	var scalePercent;
 
-	scalePercent = width / tempWidth * 100;
+	var scalePercent = width / tempWidth * 100;
 
-	if (fill && height > tempHeight * scalePercent / 100) scalePercent = Math.ceil(height / tempHeight * 100);
+	if ((fill && height > tempHeight * scalePercent / 100) || (!fill && height < tempHeight * scalePercent / 100))
+		scalePercent = height / tempHeight * 100;
 
 	newLayer.resize(scalePercent, scalePercent);
 
-
-	if (!fill) {
-		moveLayerTo(newLayer, existingLayer.bounds[0].value, existingLayer.bounds[1].value);
-	} else {
-		var wdif = Math.floor((tempWidth*scalePercent/100 - width)/2);
-		var hdif = Math.floor((tempHeight*scalePercent/100 - height)/2);
-		moveLayerTo(newLayer, existingLayer.bounds[0].value-wdif-1, existingLayer.bounds[1].value-hdif-1);
-	}
+	var wdif = Math.floor((tempWidth*scalePercent/100 - width)/2);
+	var hdif = Math.floor((tempHeight*scalePercent/100 - height)/2);
+	moveLayerTo(newLayer, existingLayer.bounds[0].value-wdif-1, existingLayer.bounds[1].value-hdif-1);
 }
 
 
 
 
 
-
-
-function fillCanvas(newLayer) {
+function fillCanvas(newLayer, fill) {
 	var tempWidth = newLayer.bounds[2] - newLayer.bounds[0];
 	var tempHeight = newLayer.bounds[3] - newLayer.bounds[1];
-	var width = app.activeDocument.width.value;
-	var height = app.activeDocument.height.value;
+	var width = app.activeDocument.width.value + 2;
+	var height = app.activeDocument.height.value + 2;
 
-	var scalePercent;
-
-	scalePercent = width / tempWidth * 100;
-	if (height > tempHeight * scalePercent / 100)
+	var scalePercent = width / tempWidth * 100;
+	if ((fill && height > tempHeight * scalePercent / 100) || (!fill && height < tempHeight * scalePercent / 100))
 		scalePercent = height / tempHeight * 100;
 
 	newLayer.resize(scalePercent, scalePercent);
