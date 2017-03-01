@@ -13,8 +13,8 @@ by Zoltan Szalay [twitter @insgraphizm](https://twitter.com/insgraphizm)
 ### Resize
 [![Play video](https://raw.githubusercontent.com/ins/UltimateScripts-Ps/gh-pages/i/resize.png)](https://vimeo.com/166353603)  
 **If the size of a clipping layer is changed, update the scale and position of the image**
-- Center and resize images to fill
-- Relative to *layer below* or *canvas*
+- Center and resize images to fill of fit
+- Relative to *clipping mask* or *canvas*. Selected automatically.
 
 ### Guides
 [![Play video](https://raw.githubusercontent.com/ins/UltimateScripts-Ps/gh-pages/i/guides.png)](https://vimeo.com/166353608)  
