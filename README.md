@@ -1,4 +1,4 @@
-# UltimateScripts for Photoshop
+# Ultimate Scripts for Photoshop
 by Zoltan Szalay [twitter @insgraphizm](https://twitter.com/insgraphizm)
 
 ## Small collection of useful scripts for everyday Photoshop work.
